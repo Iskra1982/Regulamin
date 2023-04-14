@@ -1,0 +1,1254 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>&#127808; Nowa Ziemia - &#128293;┇opis-regulamin</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-300.woff);
+            font-weight: 300;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-400.woff);
+            font-weight: 400;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-500.woff);
+            font-weight: 500;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-600.woff);
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: Whitney;
+            src: url(https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/whitney-700.woff);
+            font-weight: 700;
+        }
+
+        body {
+            background-color: #36393e;
+            color: #dcddde;
+            font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        a {
+            color: #00aff4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: contain;
+        }
+
+        .markdown {
+            max-width: 100%;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .preserve-whitespace {
+            white-space: pre-wrap;
+        }
+
+        .spoiler-text {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .spoiler-text--hidden {
+            cursor: pointer;
+            background-color: #202225;
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .spoiler-text--hidden:hover {
+            background-color: rgba(32, 34, 37, 0.8);
+        }
+
+        .spoiler-text--hidden::selection {
+            color: rgba(0, 0, 0, 0);
+        }
+
+        .quote {
+            display: flex;
+            margin: 0.05em 0;
+        }
+
+        .quote::before {
+            content: "";
+            margin-right: 0.5em;
+            border: 2px solid #4f545c;
+            border-radius: 3px;
+        }
+
+        .pre {
+            background-color: #2f3136;
+            font-family: "Consolas", "Courier New", Courier, monospace;
+        }
+
+        .pre--multiline {
+            margin-top: 0.25em;
+            padding: 0.5em;
+            border: 2px solid #282b30;
+            border-radius: 5px;
+            color: #b9bbbe;
+        }
+
+        .pre--multiline.hljs {
+            background-color: #2f3136;
+            color: #b9bbbe;
+        }
+
+        .pre--inline {
+            padding: 2px;
+            border-radius: 3px;
+            font-size: 0.85em;
+        }
+
+        .mention {
+            border-radius: 3px;
+            padding: 0 2px;
+            color: #dee0fc;
+            background-color: rgba(88, 101, 242, .3);
+            font-weight: 500;
+        }
+
+        .mention:hover {
+            background-color: #5865f2;
+            color: #ffffff
+        }
+
+        .timestamp {
+            border-radius: 3px;
+            padding: 0 2px;
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .emoji {
+            width: 1.325em;
+            height: 1.325em;
+            margin: 0 0.06em;
+            vertical-align: -0.4em;
+        }
+
+        .emoji--small {
+            width: 1em;
+            height: 1em;
+        }
+
+        .emoji--large {
+            width: 2.8em;
+            height: 2.8em;
+        }
+
+        .preamble {
+            display: grid;
+            margin: 0 0.3em 0.6em 0.3em;
+            max-width: 100%;
+            grid-template-columns: auto 1fr;
+        }
+
+        .preamble__guild-icon-container {
+            grid-column: 1;
+        }
+
+        .preamble__guild-icon {
+            max-width: 88px;
+            max-height: 88px;
+        }
+
+        .preamble__entries-container {
+            grid-column: 2;
+            margin-left: 0.6em;
+        }
+
+        .preamble__entry {
+            font-size: 1.4em;
+            color: #ffffff;
+        }
+
+        .preamble__entry--small {
+            font-size: 1em;
+        }
+
+        .chatlog {
+            max-width: 100%;
+        }
+
+        .chatlog__message-group {
+            display: grid;
+            margin: 0 0.6em;
+            padding: 0.9em 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-template-columns: auto 1fr;
+        }
+
+        .chatlog__reference-symbol {
+            grid-column: 1;
+            margin: 8px 4px 4px 18px;
+            border-left: 2px solid #4f545c;
+            border-top: 2px solid #4f545c;
+            border-radius: 8px 0 0 0;
+        }
+
+        .chatlog__reference {
+            display: flex;
+            grid-column: 2;
+            margin-bottom: 0.25em;
+            font-size: 0.875em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            align-items: center;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-avatar {
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            margin-right: 0.25em;
+        }
+
+        .chatlog__reference-name {
+            margin-right: 0.3em;
+            font-weight: 600;
+        }
+
+        .chatlog__reference-content {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__reference-content a:hover {
+            text-decoration: none;
+        }
+
+        .chatlog__reference-link {
+            cursor: pointer;
+            color: #b5b6b8;
+        }
+
+        .chatlog__reference-link * {
+            display: inline;
+            pointer-events: none;
+        }
+
+        .chatlog__reference-link:hover {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-link:hover *:not(.spoiler-text) {
+            color: #ffffff;
+        }
+
+        .chatlog__reference-edited-timestamp {
+            margin-left: 0.25em;
+            font-size: 0.8em;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__author-avatar-container {
+            grid-column: 1;
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+        }
+
+        .chatlog__author-avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .chatlog__messages {
+            grid-column: 2;
+            min-width: 50%;
+            direction: ltr;
+        }
+
+        .chatlog__author-name {
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        .chatlog__timestamp {
+            margin-left: 0.3em;
+            font-size: 0.75em;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__message {
+            padding: 0.1em 0.3em;
+            margin: 0 -0.3em;
+            background-color: transparent;
+            transition: background-color 1s ease;
+        }
+
+        .chatlog__message--highlighted {
+            background-color: rgba(114, 137, 218, 0.2);
+        }
+
+        .chatlog__message--pinned {
+            background-color: rgba(249, 168, 37, 0.05);
+        }
+
+        .chatlog__content {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        .chatlog__edited-timestamp {
+            margin-left: 0.15em;
+            font-size: 0.8em;
+        }
+
+        .chatlog__attachment {
+            display: inline-block;
+            position: relative;
+            margin-top: 0.3em;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden {
+            cursor: pointer;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chatlog__attachment--hidden * {
+            pointer-events: none;
+        }
+
+        .chatlog__attachment-spoiler-caption {
+            display: none;
+            z-index: 999;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.4em 0.8em;
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 20px;
+            color: #dcddde;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-spoiler-caption {
+            display: block;
+        }
+
+        .chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption {
+            color: #fff;
+        }
+
+        .chatlog__attachment-media {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-media {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic {
+            width: 100%;
+            max-width: 520px;
+            height: 40px;
+            padding: 10px;
+            background-color: #2f3136;
+            border: 1px solid #292b2f;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .chatlog__attachment--hidden .chatlog__attachment-generic {
+            filter: blur(44px);
+        }
+
+        .chatlog__attachment-generic-icon {
+            float: left;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .chatlog__attachment-generic-size {
+            color: #72767d;
+            font-size: 12px;
+        }
+
+        .chatlog__attachment-generic-name {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .chatlog__edited-timestamp {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .chatlog__embed {
+            display: flex;
+            margin-top: 0.3em;
+            max-width: 520px;
+        }
+
+        .chatlog__embed-color-pill {
+            flex-shrink: 0;
+            width: 0.25em;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+        }
+
+        .chatlog__embed-color-pill--default {
+            background-color: #202225;
+        }
+
+        .chatlog__embed-content-container {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em 0.6em;
+            background-color: rgba(46, 48, 54, 0.3);
+            border: 1px solid rgba(46, 48, 54, 0.6);
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+
+        .chatlog__embed-content {
+            display: flex;
+            width: 100%;
+        }
+
+        .chatlog__embed-text {
+            flex: 1;
+        }
+
+        .chatlog__embed-author {
+            display: flex;
+            margin-bottom: 0.3em;
+            align-items: center;
+        }
+
+        .chatlog__embed-author-icon {
+            margin-right: 0.5em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .chatlog__embed-author-name {
+            font-size: 0.875em;
+            font-weight: 600;
+            direction: ltr;
+            unicode-bidi: bidi-override;
+            color: #ffffff
+        }
+
+        .chatlog__embed-author-name-link {
+            color: #ffffff;
+        }
+
+        .chatlog__embed-title {
+            margin-bottom: 0.2em;
+            font-size: 0.875em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-description {
+            font-weight: 500;
+            font-size: 0.85em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5em;
+        }
+
+        .chatlog__embed-field {
+            flex: 0;
+            min-width: 100%;
+            max-width: 506px;
+            padding-top: 0.6em;
+            font-size: 0.875em;
+        }
+
+        .chatlog__embed-field--inline {
+            flex: 1;
+            flex-basis: auto;
+            min-width: 150px;
+        }
+
+        .chatlog__embed-field-name {
+            margin-bottom: 0.2em;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .chatlog__embed-field-value {
+            font-weight: 500;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-thumbnail {
+            flex: 0;
+            margin-left: 1.2em;
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-image-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-image {
+            max-width: 500px;
+            max-height: 400px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-footer {
+            margin-top: 0.6em;
+            color: #dcddde;
+        }
+
+        .chatlog__embed-footer-icon {
+            margin-right: 0.2em;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .chatlog__embed-footer-text {
+            vertical-align: middle;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        .chatlog__embed-plainimage {
+            vertical-align: top;
+            max-width: 45vw;
+            max-height: 500px;
+            border-radius: 3px;
+        }
+
+        .chatlog__embed-spotify {
+            border: 0;
+        }
+
+        .chatlog__embed-youtube-container {
+            margin-top: 0.6em;
+        }
+
+        .chatlog__embed-youtube {
+            border: 0;
+            border-radius: 3px;
+        }
+
+        .chatlog__reactions {
+            display: flex;
+        }
+
+        .chatlog__reaction {
+            display: flex;
+            align-items: center;
+            margin: 0.35em 0.1em 0.1em 0;
+            padding: .125rem .375rem;
+            background-color: #2f3136;
+            border-radius: 8px;
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+        }
+
+        .chatlog__reaction:hover {
+            border-color: hsla(0,0%,100%,.2);
+            border-width: 1px;
+            border-style: solid;
+            background-color: transparent;
+        }
+
+        .chatlog__reaction-count {
+            min-width: 9px;
+            margin-left: 0.35em;
+            font-size: 0.875em;
+            color: #b9bbbe;
+        }
+
+        .chatlog__reaction:hover .chatlog__reaction-count {
+            color: #dcddde;
+        }
+
+        .chatlog__bot-tag {
+            position: relative;
+            top: -.1em;
+            margin-left: 0.3em;
+            padding: 0.05em 0.3em;
+            border-radius: 3px;
+            line-height: 1.3;
+            background-color: #5865F2;
+            color: #ffffff;
+            font-size: 0.625em;
+            font-weight: 500;
+        }
+
+        .postamble {
+            margin: 1.4em 0.3em 0.6em 0.3em;
+            padding: 1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .postamble__entry {
+            color: #ffffff;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.pre--multiline').forEach(block => hljs.highlightBlock(block));
+        });
+    </script>
+
+    <script>
+        function scrollToMessage(event, id) {
+            var element = document.getElementById('message-' + id);
+
+            if (element) {
+                event.preventDefault();
+
+                element.classList.add('chatlog__message--highlighted');
+
+                window.scrollTo({
+                    top: element.getBoundingClientRect().top - document.body.getBoundingClientRect().top - (window.innerHeight / 2),
+                    behavior: 'smooth'
+                });
+
+                window.setTimeout(function() {
+                    element.classList.remove('chatlog__message--highlighted');
+                }, 2000);
+            }
+        }
+
+        function showSpoiler(event, element) {
+            if (element && element.classList.contains('spoiler-text--hidden')) {
+                event.preventDefault();
+                element.classList.remove('spoiler-text--hidden');
+            }
+            if (element && element.classList.contains('chatlog__attachment--hidden')) {
+                event.preventDefault();
+                element.classList.remove('chatlog__attachment--hidden');
+            }
+        }
+    </script>
+
+    <svg style="display: none">
+        <symbol id="icon-attachment" viewBox="0 0 720 960">
+            <path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z" />
+            <path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z" />
+            <path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z" />
+            <path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z" />
+        </symbol>
+    </svg>
+</head>
+<body>
+
+<div class="preamble">
+    <div class="preamble__guild-icon-container">
+        <img class="preamble__guild-icon" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/e39c40f69fb64d44390f0e8ceb70c779-08C9B.png" alt="Guild icon" loading="lazy">
+    </div>
+    <div class="preamble__entries-container">
+        <div class="preamble__entry">&#127808; Nowa Ziemia</div>
+        <div class="preamble__entry">----------&#127809; Witaj &#127809;--------- / &#128293;┇opis-regulamin</div>
+
+            <div class="preamble__entry preamble__entry--small">Witajcie przybysze na Nowej Ziemi. 
+Przeczytajcie uważnie opis, regulamin i netykiętę i zatwierdźcie zasady serwera na samym dole wciskając czerwoną ikonkę, a zobaczycie inne pokoje.</div>
+
+    </div>
+</div>
+
+<div class="chatlog">
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/8c08c61d33117de1667dc3ae428bae19-D7100.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Asioha&#129293;#0110" data-user-id="690593264646225952" style="color: rgb(44,255,243)">Asioha&#129293;</span>
+
+
+        <span class="chatlog__timestamp">29-May-21 09:05 PM</span>
+
+            <div class="chatlog__message " data-message-id="848290938849067059" id="message-848290938849067059" title="Message sent: 29-May-21 09:05 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><div class="pre pre--multiline language-diff">-ABY ZOBACZYĆ INNE POKOJE, ZATWIERDŹ REGULAMIN NASZEGO SERWERA NA SAMYM DOLE </div> 
+<strong>Witajcie na serwerze</strong> <strong>Nowa Ziemia </strong> 
+
+To miejsce spotkań dla ludzi z otwartymi umysłami, szczerymi i dobrymi sercami i tymi, kt&#243;rzy już wiedzą, że są wielowymiarowymi Istotami. To przestrzeń w kt&#243;rej bez skrępowania możemy rozmawiać, pisać i dzielić się swoimi przemyśleniami, przeczuciami, a czasem i trudnościami życia codziennego. Jesteśmy tu razem by nie czuć się samotnymi odmieńcami wśr&#243;d jeszcze śpiących wok&#243;ł nas ludzi, a przede wszystkim byśmy mogli się wspierać w etapach&#160;rozwoju naszej osobistej jak i globalnej świadomości.
+
+To przestrzeń gdzie energie czystego Serca i otwartego Umysłu wsp&#243;łdziałają, wsp&#243;łtworzą i wsp&#243;łistnieją jako para cudownych potencjał&#243;w tworząc Świadomość Kolektywu naszych Dusz.
+Autentyczność, szczerość, prawda, szacunek, kultura osobista, akceptacja, miłość, zrozumienie i wsparcie są filarami naszej grupy i podstawowymi wartościami&#160;każdej Świadomej Istoty, dlatego każdy kto do nas dołączy jest proszony o szanowanie i dbanie o te wartości oraz o utrzymywanie przyjaznej atmosfery tego miejsca, byśmy Wszyscy czuli się tu jak w domu podnosząc tylko nasze wibracje, a nie je sobie obniżając.
+
+Osiągnięcie autentycznej r&#243;wnowagi i wew.harmonii jest nie lada wyzwaniem,kt&#243;re stoi przed ludzkością, dlatego takie grupy jak ta, są ważnym aspektem w globalnym &quot;budzeniu&quot; ludzi i przypomnieniu sobie kim prawdziwie jesteśmy jako ludzie, by jako cywilizacja wznieść  się&#160;na wyższy level świadomości.
+
+Serwer Nowa Ziemia jest stworzony tak, byście szybko znaleźli to czego szukacie. Jedni potrzebują wiedzy, nauki, zrozumienia i ugruntowania się w fizycznym świecie Umysłu, inni zaś potrzebują nawiązać kontakt i poczuć połączenie ze swoją Duszą, dlatego informacje i rozmowy podzielone są na odpowiednie pokoje. 
+Q otworzyło nam oczy na wiele spraw i pokazało brutalną prawdę o władzy na świecie, polityce, religii, a dla wielu było początkiem duchowego przebudzenia.</span>
+
+                                <span class="chatlog__edited-timestamp" title="21-Jan-22 09:55 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="848290964739981342" id="message-848290964739981342" title="Message sent: 29-May-21 09:05 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Dziś jesteśmy w miejscu, w kt&#243;rym zdobytą wiedzę oraz duchowy rozw&#243;j naszej świadomości będziemy wykorzystywać do budowania świadomej społeczności w naszym życiu jak i do pomocy w budzeniu innych ludzi. Prawda jest taka, że nic nie zatrzyma tego co nadchodzi, a nadchodzi ZMIANA ŚWIADOMOŚCI i długo wyczekiwana WOLNOŚĆ.
+
+Zapraszamy Was do uczestnictwa w rozmowach, wsp&#243;lnych dyskusjach na głosowym, medytacjach oraz dzielenia się ciekawymi informacjami z przestrzeni. Razem stw&#243;rzmy miejsce, w kt&#243;rym będzie nam miło, ciepło i bezpiecznie.
+Przeczytaj zasady tego serwera, poczuj sercem czy się z nimi wew.zgadzasz i świadomie potwierdź, w ten spos&#243;b uzyskasz dostęp do reszty pokoi. 
+ <img loading="lazy" class="emoji " alt="aFlyingHearts_Red" title="aFlyingHearts_Red" src="https://cdn.discordapp.com/emojis/772324490469572629.gif"> WWG1WGA<img loading="lazy" class="emoji " alt="QAnonPoland" title="QAnonPoland" src="https://cdn.discordapp.com/emojis/764734274686418954.png"> <img loading="lazy" class="emoji " alt="aFlyingHearts_Red" title="aFlyingHearts_Red" src="https://cdn.discordapp.com/emojis/772324490469572629.gif">
+
+P.S
+ Jednocześnie pragniemy poinformować, że serwer &quot;Nowa Ziemia&quot; TO NIE JEST KONTYNUACJA WCZEŚNIEJSZEGO SERWERA QPOLSKA, TO ZUPEŁNIE INNY SERWER I ZASADY PANUJĄCE NA NIM TEŻ SĄ INNE.</span>
+
+                                <span class="chatlog__edited-timestamp" title="21-Jan-22 04:57 PM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="RainbowHeart">
+                                <img class="emoji emoji--small" alt="RainbowHeart" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/764359619338174474-6086A.png" loading="lazy">
+                                <span class="chatlog__reaction-count">44</span>
+                            </div>
+                            <div class="chatlog__reaction" title="HelloNMZC">
+                                <img class="emoji emoji--small" alt="HelloNMZC" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/764729837608501298-7881A.png" loading="lazy">
+                                <span class="chatlog__reaction-count">13</span>
+                            </div>
+                            <div class="chatlog__reaction" title="smiling_face_with_3_hearts">
+                                <img class="emoji emoji--small" alt="&#129392;" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/1f970-EC7C3.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">16</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/b691d6a214d47581809c7358f596dfcc-80659.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Iskra &#128171; φωτός#2259" data-user-id="281914174446239746" style="color: rgb(44,255,243)">Iskra ✨ φωτός</span>
+
+
+        <span class="chatlog__timestamp">29-May-21 09:08 PM</span>
+
+            <div class="chatlog__message " data-message-id="848291801743228984" id="message-848291801743228984" title="Message sent: 29-May-21 09:08 PM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong>REGULAMIN</strong>
+
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  1) Szanuj siebie i innych ludzi, wszelkie formy obrażania, agresji, mowy nienawiści i hejtu kończą się banem.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  2) Bierzesz pełną odpowiedzialność za swoje intencje, myśli, słowa i emocje udostępniane na serwerze. 
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  3) Wzmacniaj siebie i przestrzeń pozytywnym nastawieniem, a kiedy jest Ci źle poproś o wsparcie.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  4) Świadomość to przede wszystkim akceptacja, szanuj więc odmienne zdanie innych.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  5) Decyzje moderator&#243;w/administrator&#243;w nie podlegają dyskusji.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  6) Zakaz spamowania, rozsiewania fałszywych informacji i nielegalnych temat&#243;w jakiegokolwiek rodzaju.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  7) Nie używaj obraźliwych sł&#243;w/symboli w swojej nazwie użytkownika lub postach.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  8) Serwer jest tylko dla os&#243;b pełnoletnich. 
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  9) Nie wolno promować/reklamować żadnych innych serwer&#243;w, stron, usług i produkt&#243;w.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  10) Nie wolno umieszczać link&#243;w do serwis&#243;w zawierających pirackie i nieprzyzwoite treści.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  11)  Nie obwiniaj nikogo innego za działania wykonywane przy użyciu Twojego konta. (zabezpiecz swoje urządzenie)
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  12) Przestrzeganie NETYKIETY jest obowiązkowe.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  13) Tłumacz na język polski wrzucane treści w innych językach.
+<img loading="lazy" class="emoji " alt="wh" title="wh" src="https://cdn.discordapp.com/emojis/915081882306248784.png">  14) Jeśli nie zgadzasz się z naszymi zasadami proszę opuść ten serwer <img loading="lazy" class="emoji " alt="🌞" title="sun_with_face" src="https://twemoji.maxcdn.com/2/svg/1f31e.svg">.</span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 03:29 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="thumbsup">
+                                <img class="emoji emoji--small" alt="&#128077;" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/1f44d-B3F5F.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">99</span>
+                            </div>
+                            <div class="chatlog__reaction" title="HelloNMZC">
+                                <img class="emoji emoji--small" alt="HelloNMZC" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/764729837608501298-7881A.png" loading="lazy">
+                                <span class="chatlog__reaction-count">15</span>
+                            </div>
+                            <div class="chatlog__reaction" title="smiling_face_with_3_hearts">
+                                <img class="emoji emoji--small" alt="&#129392;" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/1f970-EC7C3.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">16</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/8c08c61d33117de1667dc3ae428bae19-D7100.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Asioha&#129293;#0110" data-user-id="690593264646225952" style="color: rgb(44,255,243)">Asioha&#129293;</span>
+
+
+        <span class="chatlog__timestamp">30-Nov-21 01:59 AM</span>
+
+            <div class="chatlog__message " data-message-id="915059394742456350" id="message-915059394742456350" title="Message sent: 30-Nov-21 01:59 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong>NETYKIETA</strong>
+
+<strong>1.</strong> Nie hejtuj – wypowiadaj się z szacunkiem.
+<strong>2.</strong> Nie naruszaj prywatności innych os&#243;b.
+<strong>3.</strong> Nie spamuj i pisz na temat.
+<strong>4.</strong> Pisz poprawnie, w obowiązującym języku.
+<strong>5.</strong> Nie udostępniaj cudzej własności bez podania źr&#243;dła.
+<strong>6.</strong> Czytaj regulaminy i respektuj zasady grupy.
+<strong>7.</strong> Nie prowokuj kł&#243;tni (zakaz trollowania).
+<strong>8.</strong> Korzystaj z wyszukiwarki, zanim zadasz pytanie.
+<strong>9.</strong> Nie udostępniaj podejrzanych artykuł&#243;w i fake news&#243;w.
+<strong>10.</strong> Nie nadużywaj ironii i sarkazmu.</span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 02:03 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/8c08c61d33117de1667dc3ae428bae19-D7100.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Asioha&#129293;#0110" data-user-id="690593264646225952" style="color: rgb(44,255,243)">Asioha&#129293;</span>
+
+
+        <span class="chatlog__timestamp">30-Nov-21 02:09 AM</span>
+
+            <div class="chatlog__message " data-message-id="915061901338234911" id="message-915061901338234911" title="Message sent: 30-Nov-21 02:09 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><strong>1. Nie hejtuj – wypowiadaj się z szacunkiem.</strong>
+Hejt, inaczej mowa nienawiści, to bardzo szkodliwe zjawisko w Internecie. Oznacza obraźliwe i agresywne wypowiedzi skierowane przeciw konkretnej osobie lub grupie. Hejtem może być więc rasistowski komentarz lub personalny atak na oponenta w dyskusji. Takie postępowanie łamie jedną z najważniejszych zasad zachowania w społeczeństwie, czyli okazywanie szacunku drugiej osobie.
+Nienawistne wypowiedzi mogą mieć konsekwencje prawne – szczeg&#243;lnie, jeśli nawołują do dyskryminacji lub zawierają pom&#243;wienia. Za ich zamieszczanie autor może otrzymać karę grzywny, ograniczenia lub pozbawienia wolności. 
+<strong>2. Nie naruszaj prywatności innych os&#243;b.</strong>
+Podobnie jak w świecie rzeczywistym, w Internecie każdy użytkownik ma prawo do prywatności. Nie wolno zatem udostępniać cudzych danych osobowych i zdjęć bez otrzymania zgody. Nie należy także publikować zrzut&#243;w ekranu prywatnych wiadomości bez ocenzurowania zdjęcia profilowego oraz imienia i nazwiska.
+<strong>3. Nie spamuj i pisz na temat.</strong>
+W większości społeczności internetowych zabronione jest zaśmiecanie konwersacji, poczty elektronicznej i wątk&#243;w dyskusyjnych. Najbardziej powszechnym rodzajem spamu są e-maile rozsyłane masowo do nieznanych odbiorc&#243;w. Zjawiskiem niechcianym jest także pisanie post&#243;w niezwiązanych z tematem grupy oraz wysyłanie reklam i link&#243;w do zewnętrznych stron.
+<strong>4. Pisz poprawnie, w obowiązującym języku.</strong>
+Komunikacja w Internecie staje się nieprzyjemna, gdy użytkownicy nie respektują zasad danego języka. Niestosowanie interpunkcji, błędy ortograficzne i nadużywanie caps-locka są drażniące dla innych uczestnik&#243;w rozmowy. Nie powinno się także pisać w obcym języku, będąc Polakiem w grupie polskojęzycznej.
+<strong>5. Nie udostępniaj cudzej własności bez podania źr&#243;dła.</strong>
+Ta zasada dotyczy np. artykuł&#243;w blogowych, dzieł sztuki i film&#243;w, kt&#243;rych autorem jest inna osoba. Wykorzystując zdjęcia lub teksty znalezione w sieci, zawsze należy podać autora lub link do źr&#243;dła.
+<strong>6. Czytaj regulaminy i respektuj zasady grupy.</strong>
+Jeśli administratorzy danej społeczności narzucają określoną strukturę post&#243;w lub komentarzy, należy znać te zasady i ich przestrzegać. Przed dołączeniem do forum lub grupy dyskusyjnej trzeba zapoznać się z regulaminem.
+<strong>7. Nie prowokuj kł&#243;tni (zakaz trollowania)</strong>.
+Trolling polega na celowym pisaniu kontrowersyjnych lub prowokacyjnych treści, aby wzbudzić gniew innych użytkownik&#243;w i wywołać kł&#243;tnię. Troll internetowy może np. podawać się za zwolennika światopoglądu, kt&#243;ry potępia reszta społeczności lub atakować kt&#243;regoś z jej członk&#243;w wyzwiskami. To szkodliwe zachowanie, kt&#243;rego bezwzględnie należy się wystrzegać.
+<strong>8. Korzystaj z wyszukiwarki, zanim zadasz pytanie.</strong>
+Powtarzające się pytania ze strony nowych użytkownik&#243;w są denerwujące dla stałych członk&#243;w grupy. Jeśli istnieje funkcja wyszukiwania, należy z niej korzystać, aby nie powielać treści.
+<strong>9. Nie udostępniaj podejrzanych artykuł&#243;w i fake news&#243;w.</strong>
+W Internecie można znaleźć zar&#243;wno wartościowe treści, jak i błędne informacje. Nie warto przekazywać dalej artykuł&#243;w, kt&#243;re nie opierają się na wiarygodnych źr&#243;dłach. Popularność tzw. clickbaitowych treści niejednokrotnie przewyższa rzetelne informacje, co zmniejsza wiarygodność Internetu.
+<strong>10. Nie nadużywaj ironii i sarkazmu.</strong>
+Czasami trudno zrozumieć intencje autora tekstu. Ironiczny komentarz w Internecie, składający się wyłącznie z przekazu werbalnego i emotikon, może być zrozumiany poważnie. Warto także mieć na uwadze to, że nie znamy os&#243;b, kt&#243;re będą czytały nasze wypowiedzi. Należy więc zachować umiar w humorze.
+źdr&#243;dło : www.itselect.pl/technologia/internet/jak-zachowac-sie-w-internecie-10-zasad-netykiety</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/8c08c61d33117de1667dc3ae428bae19-D7100.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Asioha&#129293;#0110" data-user-id="690593264646225952" style="color: rgb(44,255,243)">Asioha&#129293;</span>
+
+
+        <span class="chatlog__timestamp">30-Nov-21 02:24 AM</span>
+
+            <div class="chatlog__message " data-message-id="915065681249173504" id="message-915065681249173504" title="Message sent: 30-Nov-21 02:24 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Wstawianie emotki <img loading="lazy" class="emoji " alt="💩" title="poop" src="https://twemoji.maxcdn.com/2/svg/1f4a9.svg"> w wpisach i jako reakcja na czyjąkolwiek wypowiedź na tym serwerze będzie traktowana jako złamanie punktu 1 zasad.
+Jeśli nie zgadzacie się z czyjąś wypowiedzią jest wiele innych emotek, by to wyrazić np. <img loading="lazy" class="emoji " alt="👎" title="thumbsdown" src="https://twemoji.maxcdn.com/2/svg/1f44e.svg"> lub <img loading="lazy" class="emoji " alt="pepeVoteNo" title="pepeVoteNo" src="https://cdn.discordapp.com/emojis/764489172513325057.png">,a wstawianie kupy pod czyimś wpisem jest wyrazem braku szacunku i tolerować takiego zachowania nie będziemy. Jest mi niezmiernie przykro, że w dobie rozwoju naszej świadomości i wzrostu wysokich wibracji niekt&#243;rym ludziom trzeba jeszcze przypominać podstawy kultury i szacunku i ustanawiać zakaz używania takich emotek....jest ich na szczęście niewielu, no ale jeszcze jak to rodzynki sie zdażają i jak widać trzeba taki zakaz wprowadzić.
+Konsekwencją użycia emotki <img loading="lazy" class="emoji " alt="💩" title="poop" src="https://twemoji.maxcdn.com/2/svg/1f4a9.svg">  kupy , będzie najpierw warn, a brak jej wykasowania będzie jednoznaczny z otrzymaniem <img loading="lazy" class="emoji " alt="aBAN" title="aBAN" src="https://cdn.discordapp.com/emojis/764941131972345906.gif"> i opuszczeniem tego serwera. 
+Prosimy Wszystkich o dbanie i utrzymywanie kultury wypowiadania się na serwerze. Nowa Ziemia do czegoś zobowiązuje <img loading="lazy" class="emoji " alt="aWinkFace" title="aWinkFace" src="https://cdn.discordapp.com/emojis/855900293072814130.gif"></span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 03:03 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/b691d6a214d47581809c7358f596dfcc-80659.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Iskra &#128171; φωτός#2259" data-user-id="281914174446239746" style="color: rgb(44,255,243)">Iskra ✨ φωτός</span>
+
+
+        <span class="chatlog__timestamp">30-Nov-21 02:24 AM</span>
+
+            <div class="chatlog__message " data-message-id="915065845695270913" id="message-915065845695270913" title="Message sent: 30-Nov-21 02:24 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">.</span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 02:26 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="915066029472907365" id="message-915066029472907365" title="Message sent: 30-Nov-21 02:25 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Serwer posiada regułę 7 warn&#243;w, po otrzymaniu 7 warn&#243;w w 7 dni BOT automatycznie będzie dawał 3 dniowego tymczasowego mute - oznacza to że będziecie mogli tylko czytać czaty ale nie można będzie nic pisać. Proszę przyjąć to do wiadomości. Dziękuję i pozdrawiam jednocześnie życzą wszystkim przyjemnego korzystania z serwera.</span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 03:02 AM">(edited)</span>
+                        </div>
+                    </div>
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/unknown-C737B.png">
+                                <img class="chatlog__attachment-media" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/unknown-C737B.png" alt="Image attachment" title="Image: unknown.png (18,12 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="915066172628680704" id="message-915066172628680704" title="Message sent: 30-Nov-21 02:26 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="915066392141770752" id="message-915066392141770752" title="Message sent: 30-Nov-21 02:27 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Na serwerze obowiązuje system kolorowych nazw nick&#243;w ma on na celu wyr&#243;żnienie aktywnych uczestnik&#243;w i w jakiś mały spos&#243;b docenić Wasze zaangażowanie w rozw&#243;j serwera.
+
+<strong>Jeśli chcecie uzyskać dostęp do poszczeg&#243;lnych r&#243;l, należy pisać i wstawiać linki na serwerze.</strong>
+<strong>Poszczeg&#243;lne rangi i ich zalety:</strong>
+
+1.)  <span class="mention" style="">@Początkujący</span>   - (Brak wrzucania z dysku, brak widoczności pokoi na ARMY i te co są poniżej) <strong>LVL 0</strong>
+2.)  <span class="mention" style="color: rgb(255, 139, 222); background-color: rgba(255, 139, 222, 0.1);">@Uczestnik</span>   - (Wrzucanie i czat głosowy, mowa/video, widoczność pokoi na ARMY) <strong>LVL 1 - 3</strong>
+3.)  <span class="mention" style="color: rgb(255, 193, 111); background-color: rgba(255, 193, 111, 0.1);">@Poszukiwacz</span>  - (+ Zmiana pseudonimu) <strong>LVL 4 - 10</strong>
+4.)  <span class="mention" style="color: rgb(63, 175, 161); background-color: rgba(63, 175, 161, 0.1);">@Badacz</span>  - (+ Dodawanie plik&#243;w na czatach) <strong>LVL 11 - 22 </strong>
+5.)  <span class="mention" style="color: rgb(87, 182, 255); background-color: rgba(87, 182, 255, 0.1);">@Odkrywca</span>  - (+ Używanie poleceń z ukośnikiem &quot;/&quot;) <strong>LVL 23 - 40</strong>
+6.)  <span class="mention" style="color: rgb(182, 219, 47); background-color: rgba(182, 219, 47, 0.1);">@Nawigator</span>  - (+ Używanie wzmianek @rola) <strong>Powyżej 41 LVL</strong>
+
+Ranking i obecny lewel sprawdzicie sobie tu:
+<a href="https://discord.com/channels/764263785635774494/839929854316118077/839930427355430932" onclick="scrollToMessage(event, '839930427355430932')">https://discord.com/channels/764263785635774494/839929854316118077/839930427355430932</a></span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 05:43 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <div class="chatlog__message " data-message-id="915066419861946430" id="message-915066419861946430" title="Message sent: 30-Nov-21 02:27 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">.</span>
+
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/1b030ef2371720bf996833320d7acf1d-28E65.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Punisher#9684" data-user-id="775233306144669788" style="color: rgb(9,199,64)">Punisher</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">30-Nov-21 02:40 AM</span>
+
+            <div class="chatlog__message " data-message-id="915069795865604106" id="message-915069795865604106" title="Message sent: 30-Nov-21 02:40 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace">Zdając sobie sprawę że nie każdemu spodoba się kolorowy nick wprowadziłem r&#243;wnież możliwość zmiany go na domyślny.
+Wystarczy Kochani abyście nacisnęli ikonkę (KRĘCĄCEGO SIĘ KOLOROWEGO KOŁA)
+
+--- Zmiana działa tylko na rangi generowane poziomem! ---</span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 03:04 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="aKoloRainbow">
+                                <img class="emoji emoji--small" alt="aKoloRainbow" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/770128835555360818-34A9F.gif" loading="lazy">
+                                <span class="chatlog__reaction-count">9</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/b691d6a214d47581809c7358f596dfcc-80659.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Iskra &#128171; φωτός#2259" data-user-id="281914174446239746" style="color: rgb(44,255,243)">Iskra ✨ φωτός</span>
+
+
+        <span class="chatlog__timestamp">30-Nov-21 02:43 AM</span>
+
+            <div class="chatlog__message " data-message-id="915070609036292097" id="message-915070609036292097" title="Message sent: 30-Nov-21 02:43 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://media.discordapp.net/attachments/767286620956524557/767398078482612275/Linia.gif">https://media.discordapp.net/attachments/767286620956524557/767398078482612275/Linia.gif</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                            <a href="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/Linia-9E08E.gif">
+                                <img class="chatlog__embed-plainimage" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/Linia-9E08E.gif" alt="Embedded image" loading="lazy">
+                            </a>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="915070674161250324" id="message-915070674161250324" title="Message sent: 30-Nov-21 02:44 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><a href="https://media.discordapp.net/attachments/767286620956524557/767409375807143946/Napis.gif">https://media.discordapp.net/attachments/767286620956524557/767409375807143946/Napis.gif</a></span>
+
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                            <a href="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/Napis-D3FA1.gif">
+                                <img class="chatlog__embed-plainimage" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/Napis-D3FA1.gif" alt="Embedded image" loading="lazy">
+                            </a>
+                        </div>
+
+            </div>
+            <div class="chatlog__message " data-message-id="915070941359403058" id="message-915070941359403058" title="Message sent: 30-Nov-21 02:45 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"><img loading="lazy" class="emoji emoji--large" alt="👇" title="point_down" src="https://twemoji.maxcdn.com/2/svg/1f447.svg"><img loading="lazy" class="emoji emoji--large" alt="🏼" title="🏼" src="https://twemoji.maxcdn.com/2/svg/1f3fc.svg"><img loading="lazy" class="emoji emoji--large" alt="👇" title="point_down" src="https://twemoji.maxcdn.com/2/svg/1f447.svg"><img loading="lazy" class="emoji emoji--large" alt="🏼" title="🏼" src="https://twemoji.maxcdn.com/2/svg/1f3fc.svg"><img loading="lazy" class="emoji emoji--large" alt="👇" title="point_down" src="https://twemoji.maxcdn.com/2/svg/1f447.svg"><img loading="lazy" class="emoji emoji--large" alt="🏼" title="🏼" src="https://twemoji.maxcdn.com/2/svg/1f3fc.svg"><img loading="lazy" class="emoji emoji--large" alt="👇" title="point_down" src="https://twemoji.maxcdn.com/2/svg/1f447.svg"><img loading="lazy" class="emoji emoji--large" alt="🏼" title="🏼" src="https://twemoji.maxcdn.com/2/svg/1f3fc.svg"><img loading="lazy" class="emoji emoji--large" alt="👇" title="point_down" src="https://twemoji.maxcdn.com/2/svg/1f447.svg"><img loading="lazy" class="emoji emoji--large" alt="🏼" title="🏼" src="https://twemoji.maxcdn.com/2/svg/1f3fc.svg"><img loading="lazy" class="emoji emoji--large" alt="👇" title="point_down" src="https://twemoji.maxcdn.com/2/svg/1f447.svg"><img loading="lazy" class="emoji emoji--large" alt="🏼" title="🏼" src="https://twemoji.maxcdn.com/2/svg/1f3fc.svg"></span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 02:47 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/1b030ef2371720bf996833320d7acf1d-28E65.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Punisher#9684" data-user-id="775233306144669788" style="color: rgb(9,199,64)">Punisher</span>
+
+            <span class="chatlog__bot-tag">BOT</span>
+
+        <span class="chatlog__timestamp">30-Nov-21 02:57 AM</span>
+
+            <div class="chatlog__message " data-message-id="915074100660162570" id="message-915074100660162570" title="Message sent: 30-Nov-21 02:57 AM">
+                    <div class="chatlog__content">
+                        <div class="markdown">
+                            <span class="preserve-whitespace"></span>
+
+                                <span class="chatlog__edited-timestamp" title="30-Nov-21 04:13 AM">(edited)</span>
+                        </div>
+                    </div>
+
+
+                        <div class="chatlog__embed">
+                                <div class="chatlog__embed-color-pill" style="background-color: rgba(251,24,0,255)"></div>
+
+                            <div class="chatlog__embed-content-container">
+                                <div class="chatlog__embed-content">
+                                    <div class="chatlog__embed-text">
+
+
+                                            <div class="chatlog__embed-description">
+                                                <div class="markdown preserve-whitespace">Klikając pod spodem w ikonę weryfikacji <img loading="lazy" class="emoji " alt="aAlertRed" title="aAlertRed" src="https://cdn.discordapp.com/emojis/764468177136123924.gif"> zgadzasz się na przestrzeganie regulaminu i wszystkich zasad naszego serwera.
+Tylko w ten spos&#243;b otrzymasz dostęp do reszty pokoi.</div>
+                                            </div>
+
+                                    </div>
+
+                                        <div class="chatlog__embed-thumbnail-container">
+                                            <a class="chatlog__embed-thumbnail-link" href="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/22a8e4c7942209aeeed513641538845b20da55eef6-6FF7A.jpeg">
+                                                <img class="chatlog__embed-thumbnail" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/22a8e4c7942209aeeed513641538845b20da55eef6-6FF7A.jpeg" alt="Thumbnail" loading="lazy">
+                                            </a>
+                                        </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    <div class="chatlog__reactions">
+                            <div class="chatlog__reaction" title="aAlertRed">
+                                <img class="emoji emoji--small" alt="aAlertRed" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/764468177136123924-53CD1.gif" loading="lazy">
+                                <span class="chatlog__reaction-count">123</span>
+                            </div>
+                            <div class="chatlog__reaction" title="point_left">
+                                <img class="emoji emoji--small" alt="&#128072;" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/1f448-4C43A.svg" loading="lazy">
+                                <span class="chatlog__reaction-count">8</span>
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+
+
+<div class="chatlog__message-group">
+
+    <div class="chatlog__author-avatar-container">
+        <img class="chatlog__author-avatar" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/b691d6a214d47581809c7358f596dfcc-80659.png" alt="Avatar" loading="lazy">
+    </div>
+
+    <div class="chatlog__messages">
+        <span class="chatlog__author-name" title="Iskra &#128171; φωτός#2259" data-user-id="281914174446239746" style="color: rgb(44,255,243)">Iskra ✨ φωτός</span>
+
+
+        <span class="chatlog__timestamp">21-Jan-22 09:59 AM</span>
+
+            <div class="chatlog__message " data-message-id="934024410535428126" id="message-934024410535428126" title="Message sent: 21-Jan-22 09:59 AM">
+
+                    <div class="chatlog__attachment " onclick="">
+
+                            <a href="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/unknown-74B36.png">
+                                <img class="chatlog__attachment-media" src="%F0%9F%8D%80%20Nowa%20Ziemia%20-%20----------%F0%9F%8D%81%20Witaj%20%F0%9F%8D%81---------%20-%20%F0%9F%94%A5%E2%94%87opis-regulamin%20%5B764324908930039849%5D.html_Files/unknown-74B36.png" alt="Image attachment" title="Image: unknown.png (44,56 KB)" loading="lazy">
+                            </a>
+                    </div>
+
+
+            </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="postamble">
+    <div class="postamble__entry">Exported 17 message(s)</div>
+</div>
+
+</body>
+
+</html>
